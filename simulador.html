@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador - Floricultura do Geovane</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Floricultura da resenha</h2>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="simulador.html" class="active">Simulador</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-simulador">
+        <section class="simulador-box">
+            <h1>Simulador de Orçamento de Plantas</h1>
+            <p>Escolha sua planta, a quantidade e selecione as opções de entrega expressa ou data especial.</p>
+
+            <div class="form-grupo">
+                <label for="produtoSimulador">Escolha a Planta:</label>
+                <select id="produtoSimulador">
+                    <option value="" data-preco="0">Selecione uma planta...</option>
+                    <option value="Girassol" data-preco="15.00">Girassol - R$ 15,00 un.</option>
+                    <option value="Rosa" data-preco="20.00">Rosa - R$ 20,00 un.</option>
+                    <option value="Cacto" data-preco="25.00">Cacto - R$ 25,00 un.</option>
+                    <option value="Algas" data-preco="40.00">Algas - R$ 40,00 un.</option>
+                </select>
+            </div>
+
+            <div class="form-grupo">
+                <label for="quantidadeSimulador">Quantidade:</label>
+                <input type="number" id="quantidadeSimulador" min="1" value="1">
+            </div>
+
+            <!-- Regras especiais do seu tema -->
+            <div class="form-grupo checkbox-group">
+                <input type="checkbox" id="entregaExpressa">
+                <label for="entregaExpressa">Entrega Expressa (Taxa extra de R$ 15,00)</label>
+            </div>
+
+            <div class="form-grupo checkbox-group">
+                <input type="checkbox" id="dataEspecial">
+                <label for="dataEspecial">Pedido para Data Especial (5% de desconto)</label>
+            </div>
+
+            <button id="btnCalcular" class="btn-enviar">Calcular Orçamento</button>
+
+            <!-- Área onde o resultado aparece -->
+            <div id="resultadoSimulacao" class="resultado-box"></div>
+        </section>
+    </main>
+
+  <script src="simulador.js"></script>
+</body>
+</html>
