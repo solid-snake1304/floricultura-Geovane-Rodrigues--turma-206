@@ -4,59 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Floricultura do Geovane</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Floricultura da resenha</h1>
 
-    <div style="background-image: url('img/resenha_vs_entrosas.png'); background-size: cover; height: 300px; padding: 20px;">
+    <header>
+        <h1>Floricultura da Resenha</h1>
+    </header>
+
+    <div class="banner">
         <nav>
             <ul>
-                <li><a href="index.html" style="color: white; background-color: black;">inicio</a></li>
-                <li><a href="catalogo.html" style="color: white; background-color: black;">Catalogo</a></li>
-                <li><a href="cadastro.html" style="color: white; background-color: black;">Cadastro</a></li>
-                <li><a href="catalogo.html" style="color: white; background-color: black;">Catálogo</a></li>
-                <li><a href="sobre.html" style="color: white; background-color: black;">Sobre</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
             </ul>
         </nav>
         
-        <br>
-        
-        <p style="color: white; background-color: black; display: inline-block;">
+        <p class="banner-texto">
             Descubra como nossas plantas podem ajudar a expulsar os entrosas do seu jardim!
         </p>
     </div>
 
-    <hr>
+    <main class="container">
+        <h2>Descubra nossas plantas e flores destaques</h2>
 
-    <h2>Descubra nossas plantas e flores destaques</h2>
+        <div class="produtos-grid">
+            <!-- DESTAQUE 1: GIRASSOL -->
+            <div class="card">
+                <div>
+                    <img src="img/girassol.png" alt="imagem de girassol">
+                    <h3>1. Girassol</h3>
+                    <p>Ilumina o seu quintal, afasta os entrosas com seu brilho e se conectado a uma bateria, carrega o seu celular!</p>
+                </div>
+                <a href="ver/girassol.html" class="btn-produto">Ver produto</a>
+            </div>
 
-    <!-- DESTAQUE 1: GIRASSOL -->
-    <div>
-        <img src="img/girassol.png" alt="imagem de girassol" width="200" height="200">
-        <h3>1. Girassol</h3>
-        <p>ilumina o seu quintal, afasta os entrosas com seu brilho e se conectado a uma bateria, carrega o seu celular!</p>
-        <a href="ver/girassol.html">Ver produto</a>
-    </div>
+            <!-- DESTAQUE 2: ROSA -->
+            <div class="card">
+                <div>
+                    <img src="img/rosa.png" alt="imagem de rosa">
+                    <h3>2. Rosa</h3>
+                    <p>Adicione beleza ao seu jardim com nossa seleção de rosas coloridas!</p>
+                </div>
+                <a href="ver/rosa.html" class="btn-produto">Ver produto</a>
+            </div>
 
-    <br>
-
-    <!-- DESTAQUE 2: ROSA -->
-    <div>
-        <img src="img/rosa.png" alt="imagem de rosa" width="200" height="200">
-        <h3>2. Rosa</h3>
-        <p>Adicione beleza ao seu jardim com nossa seleção de rosas coloridas!</p>
-        <a href="ver/rosa.html">Ver produto</a>
-    </div>
-
-    <br>
-
-    <!-- DESTAQUE 3: CACTO -->
-    <div>
-        <img src="img/cacto.png" alt="imagem de cacto" width="200" height="200">
-        <h3>3. Cacto</h3>
-        <p>Perfeito para quem busca uma planta que espete os entrosas e ainda decore o ambiente!</p>
-        <a href="ver/cacto.html">Ver produto</a>
-    </div>
+            <!-- DESTAQUE 3: CACTO -->
+            <div class="card">
+                <div>
+                    <img src="img/cacto.png" alt="imagem de cacto">
+                    <h3>3. Cacto</h3>
+                    <p>Perfeito para quem busca uma planta que espete os entrosas e ainda decore o ambiente!</p>
+                </div>
+                <a href="ver/cacto.html" class="btn-produto">Ver produto</a>
+            </div>
+        </div>
+    </main>
 
 </body>
 </html>

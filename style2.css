@@ -1,0 +1,79 @@
+/* =========================================
+   ESTILOS DO CATÁLOGO E PÁGINAS INTERNAS
+   ========================================= */
+
+.nav-interna {
+    margin-top: 15px;
+}
+
+/* Caixa de Filtros e Resumo */
+.filtros-box {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.filtros-box h3 {
+    color: #1b4332;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.botoes-filtro {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.btn-filtro {
+    background-color: #e9f5ee;
+    color: #2d6a4f;
+    border: 2px solid #2d6a4f;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-filtro:hover,
+.btn-filtro:focus {
+    background-color: #2d6a4f;
+    color: white;
+}
+
+.resumo-catalogo {
+    background-color: #f4f7f5;
+    padding: 12px;
+    border-radius: 8px;
+    color: #2d3436;
+    font-size: 1rem;
+    display: inline-block;
+}
+
+/* Detalhes dos Cards do Catálogo */
+.tag-categoria {
+    display: inline-block;
+    background-color: #d8f3dc;
+    color: #1b4332;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.preco-card {
+    font-size: 1.35rem !important;
+    font-weight: bold;
+    color: #1b4332 !important;
+    margin-bottom: 15px !important;
+}

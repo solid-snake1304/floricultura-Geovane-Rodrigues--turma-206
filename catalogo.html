@@ -3,109 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo - Floricultura da resenha</title>
+    <title>Catálogo - Floricultura da Resenha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Catálogo de Plantas - Floricultura da resenha</h1>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="catalogo.html">Catalogo</a></li>
-            <li><a href="cadastro.html">Cadastro</a></li>
-            <li><a href="simulador.html">Simulador</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>Catálogo de Plantas</h1>
+        <nav class="nav-interna">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <hr>
+    <main class="container">
+        <section class="filtros-box">
+            <h3>Filtrar por Categoria</h3>
+            <div class="botoes-filtro">
+                <button class="btn-filtro" onclick="filtrarPlantas('todas')">Todas as Plantas</button>
+                <button class="btn-filtro" onclick="filtrarPlantas('flores')">Flores</button>
+                <button class="btn-filtro" onclick="filtrarPlantas('cactos')">Cactos e Suculentas</button>
+                <button class="btn-filtro" onclick="filtrarPlantas('exoticas')">Exóticas</button>
+            </div>
 
-    <div>
-        <h3>Filtrar por Categoria:</h3>
-        <button onclick="filtrarPlantas('todas')">Todas as Plantas</button>
-        <button onclick="filtrarPlantas('flores')">Flores</button>
-        <button onclick="filtrarPlantas('cactos')">Cactos e Suculentas</button>
-        <button onclick="filtrarPlantas('exoticas')">Exóticas</button>
-    </div>
+            <div class="resumo-catalogo">
+                <p>
+                    <strong>Plantas exibidas:</strong> <span id="contador-itens">0</span> | 
+                    <strong>Soma dos preços exibidos:</strong> R$ <span id="valor-total">0,00</span>
+                </p>
+            </div>
+        </section>
 
-    <br>
+        <div id="lista-plantas" class="produtos-grid"></div>
+    </main>
 
-
-    <div>
-        <p>
-            <strong>Plantas exibidas:</strong> <span id="contador-itens">0</span> | 
-            <strong>Soma dos preços exibidos:</strong> R$ <span id="valor-total">0,00</span>
-        </p>
-    </div>
-
-    <hr>
-
- 
-    <div id="lista-plantas"></div>
-
-  
     <script>
-        
         const plantas = [
             {
                 nome: "1. Girassol",
                 categoria: "flores",
                 preco: 35.00,
                 imagem: "img/girassol.png",
-                descricao: "Ilumina o seu quintal, afasta os entrosas com seu brilho e ainda alegra a sala!",
-                link: "ver/girassol.html"
+                descricao: "Ilumina o seu quintal, afasta os entrosas com seu brilho e ainda alegra a sala!"
             },
             {
                 nome: "2. Rosa",
                 categoria: "flores",
                 preco: 25.00,
                 imagem: "img/rosa.png",
-                descricao: "Adicione beleza e perfume ao seu jardim com nossa seleção de rosas coloridas.",
-                link: "ver/rosa.html"
+                descricao: "Adicione beleza e perfume ao seu jardim com nossa seleção de rosas coloridas."
             },
             {
                 nome: "3. Cacto",
                 categoria: "cactos",
                 preco: 40.00,
                 imagem: "img/cacto.png",
-                descricao: "Perfeito para quem busca uma planta que espete os entrosas e decore o ambiente.",
-                link: "ver/cacto.html"
+                descricao: "Perfeito para quem busca uma planta que espete os entrosas e decore o ambiente."
             },
             {
                 nome: "4. Colar-de-Pérolas (Disparervilha)",
                 categoria: "cactos",
                 preco: 50.00,
                 imagem: "img/disparervilha.png",
-                descricao: "Suculenta cheia de bolinhas verdes. Igualzinha a do jogo, ótima para vasos suspensos.",
-                link: "ver/disparervilha.html"
+                descricao: "Suculenta cheia de bolinhas verdes. Igualzinha a do jogo, ótima para vasos suspensos."
             },
             {
                 nome: "5. Planta Carnívora (Chomper)",
                 categoria: "exoticas",
                 preco: 65.00,
                 imagem: "img/carnivora.png",
-                descricao: "Visual clássico do jogo e ainda acaba com os mosquitos e pernilongos da casa.",
-                link: "ver/carnivora.html"
+                descricao: "Visual clássico do jogo e ainda acaba com os mosquitos e pernilongos da casa."
             },
             {
                 nome: "6. Mini Cogumelo Decorativo",
                 categoria: "exoticas",
                 preco: 30.00,
                 imagem: "img/cogumelo.png",
-                descricao: "Terrário fechado para cantinhos com sombra. A cara das fases noturnas.",
-                link: "ver/cogumelo.html"
+                descricao: "Terrário fechado para cantinhos com sombra. A cara das fases noturnas."
             },
             {
-                nome: "7. batatão",
+                nome: "7. Batatão",
                 categoria: "exoticas",
                 preco: 15.00,
-                imagem:"img/batatao.png",
-                descricao: "batatão é uma planta que se parece com uma batata gigante.",
-                link: "ver/batatão.html"
+                imagem: "img/batatao.png",
+                descricao: "Batatão é uma planta que se parece com uma batata gigante."
             }
         ];
 
-    
         function mostrarPlantas(listaFiltrada) {
             const container = document.getElementById("lista-plantas");
             const spanContador = document.getElementById("contador-itens");
@@ -118,13 +107,14 @@
                 somaPreco += planta.preco;
 
                 container.innerHTML += `
-                    <div style="border: 1px solid black; padding: 10px; margin-bottom: 15px; width: 300px;">
-                        <img src="${planta.imagem}" alt="${planta.nome}" width="150" height="150">
-                        <h3>${planta.nome}</h3>
-                        <p><strong>Categoria:</strong> ${planta.categoria}</p>
-                        <p>${planta.descricao}</p>
-                        <p><strong>Preço:</strong> R$ ${planta.preco.toFixed(2).replace('.', ',')}</p>
-                        <a href="${planta.link}">Ver produto</a>
+                    <div class="card">
+                        <div>
+                            <img src="${planta.imagem}" alt="${planta.nome}">
+                            <span class="tag-categoria">${planta.categoria}</span>
+                            <h3>${planta.nome}</h3>
+                            <p>${planta.descricao}</p>
+                        </div>
+                        <p class="preco-card" style="margin-bottom: 0 !important;">R$ ${planta.preco.toFixed(2).replace('.', ',')}</p>
                     </div>
                 `;
             });
@@ -142,7 +132,6 @@
             }
         }
 
-       
         mostrarPlantas(plantas);
     </script>
 </body>
