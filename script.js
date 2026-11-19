@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-
+ 
     const formCadastro = document.getElementById("formCadastro");
 
     if (formCadastro) {
