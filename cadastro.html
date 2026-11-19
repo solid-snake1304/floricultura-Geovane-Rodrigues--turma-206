@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Floricultura do Geovane</title>
+  
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">Floricultura do Geovane</h2>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="simulador.html">Simulador</a></li>
+                <li><a href="cadastro.html" class="active">Cadastro</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container-cadastro">
+        <section class="form-box">
+            <h1>Cadastre-se na Floricultura</h1>
+            <p>Preencha os dados abaixo para receber ofertas exclusivas e novidades das nossas plantas.</p>
+          
+            <form id="formCadastro">
+                
+                <div class="input-group">
+                    <label for="nome">Nome Completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo">
+                </div>
+
+                <div class="input-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com">
+                </div>
+
+                <div class="input-group">
+                    <label for="telefone">Telefone / WhatsApp:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(XX) 9XXXX-XXXX">
+                </div>
+
+                <div class="input-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" placeholder="Mínimo de 6 caracteres">
+                </div>
+
+                <div class="input-group">
+                    <label for="plantaFavorita">Planta Favorita:</label>
+                    <select id="plantaFavorita" name="plantaFavorita">
+                        <option value="">Selecione uma opção</option>
+                        <option value="girassol">Girassol</option>
+                        <option value="rosa">Rosa</option>
+                        <option value="cacto">Cacto</option>
+                        <option value="orquidea">Orquídea</option>
+                    </select>
+                </div>
+
+                <div class="input-group checkbox-group">
+                    <input type="checkbox" id="termos" name="termos">
+                    <label for="termos">Aceito receber promoções por e-mail</label>
+                </div>
+
+                <!-- Mensagem de feedback para o usuário -->
+                <div id="mensagemFeedback" class="feedback"></div>
+
+                <button type="submit" class="btn-enviar">Cadastrar</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
